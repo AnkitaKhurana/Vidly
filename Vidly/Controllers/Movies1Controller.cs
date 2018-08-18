@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -15,9 +16,24 @@ namespace Vidly.Controllers
         private VidlyContext db = new VidlyContext();
 
         // GET: Movies1
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.Movies.ToList());
+        //}
+
+
+        // Search : Movies1
+        public async Task<ActionResult> Index(string searchString)
         {
-            return View(db.Movies.ToList());
+            var movies = from m in db.Movies
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Name.Contains(searchString));
+            }
+
+            return View(await movies.ToListAsync());
         }
 
         // GET: Movies1/Details/5
