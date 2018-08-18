@@ -23,6 +23,12 @@ namespace Vidly.Controllers
 
 
         // Search : Movies1
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
+        }
+
         public async Task<ActionResult> Index(string searchString)
         {
             var movies = from m in db.Movies
@@ -60,7 +66,6 @@ namespace Vidly.Controllers
         // POST: Movies1/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name")] Movie movie)
         {
