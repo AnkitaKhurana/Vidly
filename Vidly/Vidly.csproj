@@ -225,6 +225,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AnkitaController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Movies1Controller.cs" />
@@ -304,6 +305,7 @@
     <Content Include="Views\Movies1\Details.cshtml" />
     <Content Include="Views\Movies1\Edit.cshtml" />
     <Content Include="Views\Movies1\Index.cshtml" />
+    <Content Include="Views\Ankita\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
