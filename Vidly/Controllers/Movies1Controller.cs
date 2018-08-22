@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.CustomModelBinder;
 
 namespace Vidly.Controllers
 {
@@ -68,8 +69,9 @@ namespace Vidly.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Genre")] Movie movie)
+        public ActionResult Create([ModelBinder(typeof(MyModelBinder))] Movie movie)
         {
+            //[Bind(Include = "Id,Name,Genre")] // When Custom Binder was not added
             if (ModelState.IsValid)
             {
                 db.Movies.Add(movie);

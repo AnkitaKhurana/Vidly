@@ -230,6 +230,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Movies1Controller.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="CustomModelBinder\MyModelBinder.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
