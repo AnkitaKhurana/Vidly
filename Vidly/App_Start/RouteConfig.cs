@@ -13,8 +13,13 @@ namespace Vidly
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+               "MyName",
+               "Ankita/Index",
+                new { controller = "AnkitaController", action = "Index"}
+           );
             routes.MapMvcAttributeRoutes();
-
+           
 
             //routes.MapRoute(
             //      "MoviesByReleaseDate",
